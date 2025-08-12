@@ -91,7 +91,7 @@ export default function Navbar() {
 
       <div
         id="logo"
-        className={`"text-lg w-full absolute text-[10rem] justify-center items-center text-center bg-red-100text-center font-bold cursor-pointer" transition-colors duration-300 ${
+        className={`" w-full absolute translate-y-[100%] sm:translate-y-[80%] md:translate-y-[20%]  text-[3rem] sm:text-[5rem] md:text-[10rem] justify-center items-center text-center bg-red-100text-center font-bold cursor-pointer" transition-colors duration-300 ${
           scrolled ? " text-transparent" : "  text-white  "
         }`}
       >

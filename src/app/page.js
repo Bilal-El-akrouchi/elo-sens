@@ -2,6 +2,7 @@ import Image from "next/image";
 import Navbar from "./component/nav/Navbar";
 import Header from "./component/header/Header";
 import SectionWho from "./component/sectionWho/SectionWho";
+import SectionPricing from "./component/pricing/SectionPricing";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <Navbar />
         <Header/>
         <SectionWho/>
+        <SectionPricing/>
       </main>
     </>
   );
