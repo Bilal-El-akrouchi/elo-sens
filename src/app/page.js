@@ -2,6 +2,10 @@ import Image from "next/image";
 import Navbar from "./component/nav/Navbar";
 import Header from "./component/header/Header";
 import SectionWho from "./component/sectionWho/SectionWho";
+import SectionContact from "./component/sectionContact/SectionContact";
+import SectionSellPoint from "./component/sectionSellPoint/SectionSellPoint";
+import SectionAccrochage from "./component/SectionAccrochage/SectionAccrochage";
+import SectionArtOratoire from "./component/sectionArtOratoire/SectionArtOratoire";
 
 export default function Home() {
   return (
@@ -10,6 +14,12 @@ export default function Home() {
         <Navbar />
         <Header/>
         <SectionWho/>
+
+
+        <SectionArtOratoire/>
+        <SectionAccrochage/>
+        <SectionSellPoint/>
+        <SectionContact/>
       </main>
     </>
   );
