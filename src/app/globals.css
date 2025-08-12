@@ -18,22 +18,24 @@
     --foreground: #ededed;
   }
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   background: radial-gradient(#e1fede, #00ff3c29);
   /* background-color: #e0ffdd; */
+  cursor: default;
 }
-section{
+section {
   padding-inline: 2%;
   padding-top: 3%;
 }
-h1{
+h1 {
   font-size: 2em;
   text-align: center;
-  text-shadow:0.5px 1px 1px #0a0a0a ;  
 }
 .scroll-animate {
   opacity: 0;
@@ -42,13 +44,16 @@ h1{
 }
 
 .visible {
-
   opacity: 1;
   transform: translateY(0);
 }
-li{
+li {
   cursor: pointer;
 }
-
-
-
+.logo {
+  width: 100px;
+  height: 100px;
+  background-image: url("/img/logoNoir.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

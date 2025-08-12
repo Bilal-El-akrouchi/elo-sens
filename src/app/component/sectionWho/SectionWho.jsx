@@ -37,6 +37,7 @@ export default function SectionWho() {
             </div>
           </div>
           <button>Nous Contacter.</button>
+          
         </div>
       </section>
     </>
