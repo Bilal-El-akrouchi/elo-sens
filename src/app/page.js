@@ -6,6 +6,7 @@ import SectionContact from "./component/sectionContact/SectionContact";
 import SectionSellPoint from "./component/sectionSellPoint/SectionSellPoint";
 import SectionAccrochage from "./component/SectionAccrochage/SectionAccrochage";
 import SectionArtOratoire from "./component/sectionArtOratoire/SectionArtOratoire";
+import SectionPricing from "./component/pricing/SectionPricing";
 
 export default function Home() {
   return (
@@ -14,8 +15,7 @@ export default function Home() {
         <Navbar />
         <Header/>
         <SectionWho/>
-
-
+        <SectionPricing/>
         <SectionArtOratoire/>
         <SectionAccrochage/>
         <SectionSellPoint/>

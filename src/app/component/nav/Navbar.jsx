@@ -36,13 +36,13 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="relative">
+    <nav className="relative z-10">
       <div
         className={`fixed py-4 items-center w-full transition-all duration-300 ${
           scrolled ? "bg-[#e0ffdd]/50 backdrop-blur-md shadow-md" : ""
         }`}
         style={{
-          transform: hidden ? "translateY(-100%)" : "translateY(0)",
+          transform: hidden ? "translateY(-200%)" : "translateY(0)",
         }}
       >
         <ul
@@ -66,11 +66,11 @@ export default function Navbar() {
 
           {/* Logo au milieu */}
           <li
-            className={`text-lg justify-center items-center text-center bg-red-100text-center   w-[30%] font-bold cursor-pointer" transition-colors duration-300 ${
+            className={`relative flex justify-center items-center  text-center bg-red-100text-center   w-[30%] font-bold cursor-pointer" transition-colors duration-300 ${
               scrolled ? "text-black " : "hidden "
             }`}
           >
-            LOGO
+          <div className="logo absolute translate-y-6" >dd</div>
           </li>
 
           {/* Côté droit */}
@@ -91,11 +91,11 @@ export default function Navbar() {
 
       <div
         id="logo"
-        className={`"text-lg w-full absolute text-[10rem] justify-center items-center text-center bg-red-100text-center font-bold cursor-pointer" transition-colors duration-300 ${
+        className={`" w-full absolute translate-y-[100%] sm:translate-y-[80%] md:translate-y-[20%]  text-[3rem] sm:text-[5rem] md:text-[10rem] justify-center items-center text-center bg-red-100text-center font-bold cursor-pointer" transition-colors duration-300 ${
           scrolled ? " text-transparent" : "  text-white  "
         }`}
       >
-        LOGO
+        ELO'SENS
       </div>
     </nav>
   );
