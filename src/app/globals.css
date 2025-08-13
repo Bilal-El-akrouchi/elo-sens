@@ -28,14 +28,26 @@ body {
   background: radial-gradient(#e1fede, #00ff3c29);
   /* background-color: #e0ffdd; */
   cursor: default;
+  box-sizing: border-box;
   
 }
 section {
-  padding-inline: 2%;
-  padding-top: 3%;
+  padding-inline: 5%;
+  padding-top: 5%;
 }
 h1 {
-  text-align: center;
+  text-align: center!important;
+}
+h2{
+  color: #064e3b;
+
+}
+p{
+  color: #064e3b;
+
+}
+.texte-vert{
+  color: #e1fede!important;
 }
 .scroll-animate {
   opacity: 0;

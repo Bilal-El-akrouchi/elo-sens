@@ -65,59 +65,57 @@ export default function SectionWho() {
 
   return (
     <section
-  id="SectionWho"
-  ref={ref}
-  className="w-full h-[800px] flex flex-col md:flex-row bg-amber-50 md:h-screen"
->
-  {/* Partie gauche */}
-  <div className="flex flex-col gap-10 text-center md:text-start md:w-1/2 p-8">
-    <h2 className="uppercase md:text-3xl">
-      Qui sommes <br /> nous
-    </h2>
-    <p className="w-full md:w-[80%]">
-      Elo'sens accompagne votre développement personnel à travers l'art
-      oratoire et propose un soutien unique aux jeunes en difficulté grâce
-      à la pair-aidance. Découvrez comment retrouver confiance en vous et
-      en vos capacités.
-    </p>
-    
-  </div>
+      id="SectionWho"
+      ref={ref}
+      className="w-full h-[800px] flex flex-col md:flex-row  md:h-screen"
+    >
+      {/* Partie gauche */}
+      <div className="flex flex-col gap-10 text-center md:text-start md:w-1/2 ">
+        <h2 className="uppercase md:text-3xl">
+          Qui sommes <br /> nous
+        </h2>
+        <p className="w-full md:w-[80%]">
+          Elo'sens accompagne votre développement personnel à travers l'art
+          oratoire et propose un soutien unique aux jeunes en difficulté grâce à
+          la pair-aidance. Découvrez comment retrouver confiance en vous et en
+          vos capacités.
+        </p>
+      </div>
 
-  {/* Partie droite */}
-  <div className="flex flex-col justify-center items-center md:w-1/2 p-8 gap-6">
-    {stats.map((stat, index) => {
-      const percent = Math.min(
-        (animatedValues[index] / stat.value) * 100,
-        100
-      );
+      {/* Partie droite */}
+      <div className="flex flex-col justify-center items-center md:w-1/2 p-8 gap-6">
+        {stats.map((stat, index) => {
+          const percent = Math.min(
+            (animatedValues[index] / stat.value) * 100,
+            100
+          );
 
-      return (
-        <div
-          key={index}
-          className="relative w-[100%] rounded-lg overflow-hidden shadow-md border border-gray-200"
-        >
-          <div
-            className={`absolute left-0 top-0 h-full bg-gradient-to-r ${stat.color} transition-all duration-300`}
-            style={{ width: `${percent}%` }}
-          ></div>
+          return (
+            <div
+              key={index}
+              className="relative w-[100%] rounded-lg overflow-hidden shadow-md border border-gray-200"
+            >
+              <div
+                className={`absolute left-0 top-0 h-full bg-gradient-to-r ${stat.color} transition-all duration-300`}
+                style={{ width: `${percent}%` }}
+              ></div>
 
-          <div className="relative z-10 flex flex-col items-center py-4">
-            <span className="text-3xl font-bold text-white drop-shadow-lg">
-              {animatedValues[index]}
-              {stat.suffix}
-            </span>
-            <span className="text-sm text-white drop-shadow-md">
-              {stat.label}
-            </span>
-          </div>
-        </div>
-      );
-    })}
-    <button className=" w-full px-6 py-2 bg-emerald-800 text-white rounded-lg shadow-md hover:bg-emerald-900 transition-colors">
-      Nous Contacter
-    </button>
-  </div>
-</section>
-
+              <div className="relative z-10 flex flex-col items-center py-4">
+                <span className="text-3xl font-bold text-white drop-shadow-lg">
+                  {animatedValues[index]}
+                  {stat.suffix}
+                </span>
+                <span className="text-sm text-white drop-shadow-md">
+                  {stat.label}
+                </span>
+              </div>
+            </div>
+          );
+        })}
+        <button className=" w-full px-6 py-2 bg-emerald-800 text-white rounded-lg shadow-md hover:bg-emerald-900 transition-colors">
+          Nous Contacter
+        </button>
+      </div>
+    </section>
   );
 }

@@ -1,7 +1,10 @@
 header {
-  background-image: url("../../../../public/img/ac78eeac46a011016a50e4c6cb299728.jpg");
+  background-image: 
+    linear-gradient(to bottom, rgba(255, 191, 0, 0) 0%, #e1fede 100%),
+    url("../../../../public/img/ac78eeac46a011016a50e4c6cb299728.jpg");
   background-size: 110%;
   background-position: 40% 40%;
+  background-repeat: no-repeat;
 }
 .divBlur {
   filter: blur(8px);

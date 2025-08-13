@@ -1,0 +1,130 @@
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(225, 254, 222, 0.4);
+  border-radius: inherit;
+  backdrop-filter: blur(8px); /* floute l’arrière-plan */
+  pointer-events: none;
+}
+
+
+.card .imgbx {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  border-radius: 15px;
+  background-size: 140%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.association{
+  background-image: url("/img/benevol.jpg");
+  
+  
+}
+.ecole{
+    background-image: url("/img/ecole.jpg");
+    
+}
+.buisnes{
+    background-image: url("/img/buisnes.jpg");
+    
+}
+
+.card .imgbx::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: -10px 10px 0 #e1fede;
+}
+.card .imgbx::after {
+  content: "";
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: -10px 10px 0 #e1fede;
+}
+.card .content {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+}
+
+.card .content .price {
+  position: absolute;
+  top: -80px;
+  height: 80px;
+  width: 50%;
+  border-top: solid 10px #e1fede;
+  border-right: solid 10px #e1fede;
+  border-top-right-radius: 25px;
+}
+.card .content .price::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: -10px -10px 0 #e1fede;
+}
+.card .content .price::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -25;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: -10px 10px 0 #064e3b;
+}
+.card .content .price a{
+    position: relative;
+    background-color: #e1fede;
+    color:#064e3b ;
+    padding: 1px 10px;
+    margin: 15px 15px;
+    display: block;
+    border-radius: 7px;
+    font-weight: 600;
+
+}
+
+
+
+
+/* les hover */
+.card:hover .content {
+  background-color: rgb(16 185 129); /* emerald-500 */
+  transition: background-color 0.3s ease;
+}
+
+.card:hover .content .price {
+    background-color: rgb(16 185 129); /* emerald-500 */
+    transition: background-color 0.3s ease;
+    
+}
+
+.card:hover .content .price::after {
+  box-shadow: -10px 10px 0 rgb(16 185 129);
+  transition: box-shadow 0.3s ease;
+}

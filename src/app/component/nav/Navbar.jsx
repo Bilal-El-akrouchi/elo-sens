@@ -36,10 +36,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="relative z-10">
+    <nav className="relative z-10 ">
       <div
         className={`fixed py-4 items-center w-full transition-all duration-300 ${
-          scrolled ? "bg-[#e0ffdd]/50 backdrop-blur-md shadow-md" : ""
+          scrolled ? "bg-emerald-900/50 backdrop-blur-md shadow-md" : ""
         }`}
         style={{
           transform: hidden ? "translateY(-200%)" : "translateY(0)",
@@ -47,13 +47,13 @@ export default function Navbar() {
       >
         <ul
           className={`flex justify-around items-center max-w-7xl px-6 py-2 transition-colors duration-300 ${
-            scrolled ? "text-black" : "text-white"
+            scrolled ? "text-emerald-50" : "text-white"
           }`}
         >
           {/* Côté gauche */}
           <div
             className={`flex justify-between items-center text-center   w-[30%] gap-6 ${
-              scrolled ? "text-black" : "hidden  "
+              scrolled ? "text-emerald-50" : "hidden  "
             }`}
           >
             <li className="cursor-pointer hover:text-blue-500 transition">
@@ -67,16 +67,16 @@ export default function Navbar() {
           {/* Logo au milieu */}
           <li
             className={`relative flex justify-center items-center  text-center bg-red-100text-center   w-[30%] font-bold cursor-pointer" transition-colors duration-300 ${
-              scrolled ? "text-black " : "hidden "
+              scrolled ? "text-emerald-50 " : "hidden "
             }`}
           >
-          <div className="logo absolute translate-y-6" >dd</div>
+          <div className="logo absolute translate-y-6" ></div>
           </li>
 
           {/* Côté droit */}
           <div
             className={` flex justify-between items-center text-center   w-[30%] gap-6  ${
-              scrolled ? "text-black" : "hidden  "
+              scrolled ? "text-emerald-50" : "hidden  "
             }`}
           >
             <li className="cursor-pointer hover:text-blue-500 transition">
@@ -92,7 +92,7 @@ export default function Navbar() {
       <div
         id="logo"
         className={`" w-full absolute translate-y-[100%] sm:translate-y-[80%] md:translate-y-[20%]  text-[3rem] sm:text-[5rem] md:text-[10rem] justify-center items-center text-center bg-red-100text-center font-bold cursor-pointer" transition-colors duration-300 ${
-          scrolled ? " text-transparent" : "  text-white  "
+          scrolled ? " text-transparent" : "  text-emerald-900  "
         }`}
       >
         ELO'SENS
