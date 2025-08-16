@@ -8,7 +8,7 @@ export default function Header() {
         <div className="w-full h-full absolute bg-[#e1fede]/50 backdrop-blur-sm ">
 
         <div className="w-full h-screen flex  justify-center items-center flex-col text-[#023a0f]">
-          <h1 id="who" className="uppercase text-3xl">
+          <h1 id="who" className="uppercase ">
             accompagne votre développement personnel grâce à la <br />
             pair-aidance
           </h1>

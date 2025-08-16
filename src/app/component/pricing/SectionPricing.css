@@ -1,3 +1,9 @@
+#sectionPricing{
+    background-image: url("/img/fonPricing.svg")!important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .card {
   position: relative;
   width: 300px;
@@ -6,7 +12,6 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  
 }
 .card::before {
   content: "";
@@ -18,7 +23,6 @@
   pointer-events: none;
 }
 
-
 .card .imgbx {
   position: relative;
   width: 100%;
@@ -27,19 +31,16 @@
   background-size: 140%;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: default!important;
 }
-.association{
+.association {
   background-image: url("/img/benevol.jpg");
-  
-  
 }
-.ecole{
-    background-image: url("/img/ecole.jpg");
-    
+.ecole {
+  background-image: url("/img/ecole.jpg");
 }
-.buisnes{
-    background-image: url("/img/buisnes.jpg");
-    
+.buisnes {
+  background-image: url("/img/buisnes.jpg");
 }
 
 .card .imgbx::before {
@@ -97,20 +98,16 @@
   border-radius: 50%;
   box-shadow: -10px 10px 0 #064e3b;
 }
-.card .content .price a{
-    position: relative;
-    background-color: #e1fede;
-    color:#064e3b ;
-    padding: 1px 10px;
-    margin: 15px 15px;
-    display: block;
-    border-radius: 7px;
-    font-weight: 600;
-
+.card .content .price a {
+  position: relative;
+  background-color: #e1fede;
+  color: #064e3b;
+  padding: 1px 10px;
+  margin: 15px 15px;
+  display: block;
+  border-radius: 7px;
+  font-weight: 600;
 }
-
-
-
 
 /* les hover */
 .card:hover .content {
@@ -119,16 +116,140 @@
 }
 
 .card:hover .content .price {
-    background-color: rgb(16 185 129); /* emerald-500 */
-    transition: background-color 0.3s ease;
-    
+  background-color: rgb(16 185 129); /* emerald-500 */
+  transition: background-color 0.3s ease;
 }
 
 .card:hover .content .price::after {
   box-shadow: -10px 10px 0 rgb(16 185 129);
   transition: box-shadow 0.3s ease;
 }
+/* //////////////////////////////// */
+.step {
+  border-radius: 30px;
+  position: relative;
+  counter-increment: step-counter;
+  color: rgb(16 185 129);
+  border: solid 10px #e1fede;
+}
+.step:hover {
+  background: rgb(16 185 129);
+}
+/* .step::after {
+  display: block;
+  content: "";
+  width: 430px;
+  height: 430px;
+  position: absolute;
+  border-radius: 50%;
+  border-right: solid 40px rgb(16 185 129);
+  border-top: solid 40px rgb(16 185 129);
+  border-bottom: solid 40px rgb(16 185 129);
+  border-left: #e1fede solid 40px;
+  right: 100;
+  top: -130px;
+  z-index: -10;
+} */
+/* .step:hover::after{
+ border-right: solid 40px rgb(16 185 129);
+  border-top: solid 40px rgb(16 185 129);
+  border-bottom: solid 40px rgb(16 185 129);
+  border-left: #e1fede solid 40px;} */
+.step::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  content: "étape\A 2"; /* \A = saut de ligne */
+  white-space: pre; /* permet de respecter le saut de ligne */
+  position: absolute;
+  left: -50;
+  top: 40;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgb(16 185 129);
+  border: solid 4px #e1fede;
+  color: #064e3b;
 
-.step{
-    border-radius: 30px;
+  font-weight: bolder;
+  font-size: 130%;
+}
+.step:hover::before {
+  background: #064e3b;
+  color: rgb(16 185 129);
+}
+
+/* :::::: */
+.step-impaire {
+  border-radius: 30px;
+  position: relative;
+  counter-increment: step-counter;
+  color: rgb(16 185 129);
+  border: solid 10px #e1fede;
+}
+.step-impaire:hover {
+  background: rgb(16 185 129);
+}
+
+.step-impaire::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  content: "étape\A 2"; /* \A = saut de ligne */
+  white-space: pre; /* permet de respecter le saut de ligne */
+  position: absolute;
+  left: -50;
+  top: 40;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgb(16 185 129);
+  border: solid 4px #e1fede;
+  color: #064e3b;
+
+  font-weight: bolder;
+  font-size: 130%;
+}
+/* .step-impaire::after{
+    display: flex   ;
+    justify-content: center;
+    align-items: center;
+    content: "";
+    position: absolute;
+    right: -60;
+    top: 50;
+
+    width:3px ;
+    height:80px ;
+    color: #064e3b;
+    background-color: #064e3b;
+    
+} */
+.step-impaire:hover::before {
+  background: #064e3b;
+  color: rgb(16 185 129);
+}
+.step-impaire:hover::after {
+  background: rgb(16 185 129);
+  color: rgb(16 185 129);
+}
+@media (max-width:950){
+.parentCard{
+    flex-direction: column!important;
+    
+}
+}
+@media (min-width:950){
+.parentCard{
+    height: 100vh;
+    
+}
+}
+@media (min-width:767) and (max-width:950) {
+.parentCard{
+    margin-top: 10%;
+    
+}
 }

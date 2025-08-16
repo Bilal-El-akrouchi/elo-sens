@@ -38,7 +38,7 @@ export default function Navbar() {
   return (
     <nav className="relative z-10 ">
       <div
-        className={`fixed py-4 items-center w-full transition-all duration-300 ${
+        className={`fixed py-4 flex justify-center items-center w-full transition-all duration-300 ${
           scrolled ? "bg-emerald-900/50 backdrop-blur-md shadow-md" : ""
         }`}
         style={{
@@ -46,13 +46,13 @@ export default function Navbar() {
         }}
       >
         <ul
-          className={`flex justify-around items-center max-w-7xl px-6 py-2 transition-colors duration-300 ${
+          className={`flex  w-full justify-around items-center max-w-7xl px-6 py-2 transition-colors duration-300 ${
             scrolled ? "text-emerald-50" : "text-white"
           }`}
         >
           {/* Côté gauche */}
           <div
-            className={`flex justify-between items-center text-center   w-[30%] gap-6 ${
+            className={`flex  justify-between items-center text-center   w-[30%] gap-6 ${
               scrolled ? "text-emerald-50" : "hidden  "
             }`}
           >

@@ -21,7 +21,6 @@
 html {
   scroll-behavior: smooth;
   user-select: none;
-  
 }
 body {
   background: var(--background);
@@ -31,26 +30,24 @@ body {
   /* background-color: #e0ffdd; */
   cursor: default;
   box-sizing: border-box;
-  
 }
 section {
-  padding-inline: 5%;
+  padding-inline: 0%;
   padding-top: 5%;
 }
+
+
 h1 {
-  text-align: center!important;
+  text-align: center !important;
 }
-h2{
+h2 {
   color: #064e3b;
-  
-
 }
-p{
+p {
   color: #064e3b;
-
 }
-.texte-vert{
-  color: #e1fede!important;
+.texte-vert {
+  color: #e1fede !important;
 }
 .scroll-animate {
   opacity: 0;
@@ -73,6 +70,37 @@ li {
   background-repeat: no-repeat;
 }
 
-button{
+button {
   cursor: pointer;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #logo {
+    font-size: 7em !important;
+    color: rgb(179, 255, 0) !important;
+  }
+}
+@media (max-width: 769px) {
+  #logo {
+    font-size:401%!important;
+    transform: translateY(35%)!important;
+    
+    
+  }
+}
+@media (max-width: 371px) {
+  #logo {
+    font-size:301%!important;
+    transform: translateY(21%)!important;
+    
+    
+  }
+}
+@media (max-width: 251px) {
+  #logo {
+    font-size:201%!important;
+    transform: translateY(-20%)!important;
+    color: rgb(165, 16, 16)!important;
+    
+    
+  }
 }
