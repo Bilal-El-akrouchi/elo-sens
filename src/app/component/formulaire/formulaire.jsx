@@ -2,7 +2,7 @@
 import "./formulaire.css";
 
 
-export default function SectionContact() {
+export default function Formulaire() {
   return (
     <>
               <form action="https://formspree.io/f/xpwrvopy" method="POST"
