@@ -14,8 +14,8 @@ export default function SectionContact() {
           <div>
           <h2 className="text-xl pb-2 texte-vert"><a href="/contact">Contactes-nous</a></h2>
           <div className="flex justify-center items-center gap-4">
-          <img src="/img/instagram.svg" alt="icone instagram" className="texte-vert"/>
-          <img src="/img/tiktok.svg" alt=" icone tiktok" className="texte-vert"/>
+          <a href="https://www.instagram.com/"><img src="/img/instagram.svg" alt="icone instagram" className="texte-vert"/></a>
+          <a href="https://www.tiktok.com/fr/"><img src="/img/tiktok.svg" alt=" icone tiktok" className="texte-vert"/></a>
           </div>
           </div>
         </div>
