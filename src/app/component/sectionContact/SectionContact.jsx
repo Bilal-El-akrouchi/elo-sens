@@ -5,7 +5,7 @@ import "./SectionContact.css";
 export default function SectionContact() {
   return (
     <>
-      <footer id="contact" className="pb-5 h-[50vh] border-t-1 border-black ">
+      <footer id="contact" className="pb-5 h-[50vh] bg-emerald-900 border-t-1 border-black ">
 
         <div className="lg:text-xl flex-col md:flex-row gap-10 text-lg flex justify-evenly items-center w-4/5 mx-auto mt-10 p-10">
           <h2 className=" bg-white p-5 rounded-2xl shadow-lg font-semibold">Rejoins-nous !</h2>
