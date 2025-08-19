@@ -1,0 +1,12 @@
+#artOratoire{
+    .liste{
+        >div:hover{
+            transition: all 0.3s;
+            background: var(--green200);
+            i{
+                transition: all 0.3s;
+                background: var(--emerald300);
+            }
+        }
+    }
+}
