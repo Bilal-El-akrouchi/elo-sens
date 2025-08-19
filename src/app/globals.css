@@ -39,7 +39,6 @@ section {
   padding-top: 5%;
 }
 
-
 h1 {
   text-align: center !important;
 }
@@ -76,6 +75,21 @@ li {
 button {
   cursor: pointer;
 }
+
+.glassed {
+  background: rgba(255, 255, 255, 0.57);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+}
+.fondtkt {
+  border-radius: 45px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 68px #bebebe, -20px -20px 68px #ffffff;
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
   #logo {
     font-size: 7em !important;
@@ -84,26 +98,20 @@ button {
 }
 @media (max-width: 769px) {
   #logo {
-    font-size:401%!important;
-    transform: translateY(35%)!important;
-    
-    
+    font-size: 401% !important;
+    transform: translateY(35%) !important;
   }
 }
 @media (max-width: 371px) {
   #logo {
-    font-size:301%!important;
-    transform: translateY(21%)!important;
-    
-    
+    font-size: 301% !important;
+    transform: translateY(21%) !important;
   }
 }
 @media (max-width: 251px) {
   #logo {
-    font-size:201%!important;
-    transform: translateY(-20%)!important;
-    color: rgb(165, 16, 16)!important;
-    
-    
+    font-size: 201% !important;
+    transform: translateY(-20%) !important;
+    color: rgb(165, 16, 16) !important;
   }
 }

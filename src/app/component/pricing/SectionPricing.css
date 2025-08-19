@@ -1,9 +1,23 @@
-#sectionPricing{
-    background-image: url("/img/fonPricing.svg")!important;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+/* #sectionPricing {
+  background: url("/img/fonPricing.svg") no-repeat 50% 50% / cover;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 95%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 95%,
+    transparent 100%
+  );
+  mask-mode: alpha; /* optionnel, par défaut
+} */
+
 .card {
   position: relative;
   width: 300px;
@@ -31,7 +45,7 @@
   background-size: 140%;
   background-repeat: no-repeat;
   background-position: center;
-  cursor: default!important;
+  cursor: default !important;
 }
 .association {
   background-image: url("/img/benevol.jpg");
@@ -235,21 +249,18 @@
   background: rgb(16 185 129);
   color: rgb(16 185 129);
 }
-@media (max-width:950){
-.parentCard{
-    flex-direction: column!important;
-    
+@media (max-width: 950) {
+  .parentCard {
+    flex-direction: column !important;
+  }
 }
-}
-@media (min-width:950){
-.parentCard{
+@media (min-width: 950) {
+  .parentCard {
     height: 100vh;
-    
+  }
 }
-}
-@media (min-width:767) and (max-width:950) {
-.parentCard{
+@media (min-width: 767) and (max-width: 950) {
+  .parentCard {
     margin-top: 10%;
-    
-}
+  }
 }
