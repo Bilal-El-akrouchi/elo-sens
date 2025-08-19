@@ -9,8 +9,12 @@ export default function SectionContact() {
 
         <div className="lg:text-xl flex-col md:flex-row gap-10 text-lg flex justify-evenly items-center w-4/5 mx-auto mt-10 p-10">
           <h2 className=" bg-white p-5 rounded-2xl shadow-lg font-semibold">Rejoins-nous !</h2>
-          <h2 className="bg-white p-5 rounded-2xl shadow-lg font-semibold"> <a href="https://www.paypal.com/be/home?locale.x=fr_BE">Soutiens-nous</a></h2>
-          <h2 className="bg-white p-5 rounded-2xl shadow-lg font-semibold"><a href="/contact">Contacte-nous</a></h2>
+          <a href="https://www.paypal.com/be/home?locale.x=fr_BE">
+          <h2 className="bg-white p-5 rounded-2xl shadow-lg font-semibold"> Soutiens-nous</h2>
+          </a>
+          <a href="/contact">
+            <h2 className="bg-white p-5 rounded-2xl shadow-lg font-semibold">Contacte-nous</h2>
+          </a>
 
         </div>
 

@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --emerald300: oklch(0.845 0.143 164.978);
+  --emerald900: oklch(0.378 0.077 168.94);
+  --green200: oklch(0.925 0.084 155.995);
 }
 
 @theme inline {
