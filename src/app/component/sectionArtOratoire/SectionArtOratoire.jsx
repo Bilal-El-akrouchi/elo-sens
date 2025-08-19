@@ -14,7 +14,7 @@ export default function SectionArtOratoire() {
           <i class="bi bi-chat py-3 px-4 text-xl text-white rounded-xl bg-emerald-900"></i>
           <p>Maîtrise de l'expression orale et corporelle</p>
         </div>
-        <div className="flex lg:flex-row flex-col justify-around items-center md:w-4/10 w-3/4 fondtkt rounded-2xl">
+        <div className="flex lg:flex-row flex-col justify-around items-center md:w-4/10 w-3/4 fondtkt p-6 rounded-2xl">
           <i class="bi bi-people py-3 px-4 text-xl text-white rounded-xl bg-emerald-900"></i>
           <p>Gestion du stress et de l'anxiété en public</p>
         </div>
