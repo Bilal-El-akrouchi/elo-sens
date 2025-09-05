@@ -5,10 +5,10 @@ export default function Header() {
     <>
       <header className="w-full h-screen relative">
         
-        <div className="w-full h-full absolute bg-[#e1fede]/50 backdrop-blur-sm ">
+        <div className="w-full h-full absolute bg-[#edf1eb]/50  backdrop-blur-sm ">
 
         <div className="w-full h-screen flex  justify-center items-center flex-col text-[#023a0f]">
-          <h1 id="who" className="uppercase ">
+          <h1 id="who" className="uppercase text-black text-3xl ">
             accompagne votre développement personnel grâce à la <br />
             pair-aidance
           </h1>

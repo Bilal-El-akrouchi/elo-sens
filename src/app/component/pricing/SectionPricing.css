@@ -31,7 +31,6 @@
   content: "";
   position: absolute;
   inset: 0;
-  border: 2px solid rgba(225, 254, 222, 0.4);
   border-radius: inherit;
   backdrop-filter: blur(8px); /* floute l’arrière-plan */
   pointer-events: none;
@@ -65,7 +64,7 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  box-shadow: -10px 10px 0 #e1fede;
+  box-shadow: -10px 10px 0 #303030;
 }
 .card .imgbx::after {
   content: "";
@@ -75,7 +74,7 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  box-shadow: -10px 10px 0 #e1fede;
+  box-shadow: -10px 10px 0 #303030;
 }
 .card .content {
   position: relative;
@@ -83,6 +82,10 @@
   height: 150px;
   border-radius: 15px;
   border-top-left-radius: 0px;
+  color: #ffc400;
+   p{
+    color: #303030;
+  }
 }
 
 .card .content .price {
@@ -90,8 +93,8 @@
   top: -80px;
   height: 80px;
   width: 50%;
-  border-top: solid 10px #e1fede;
-  border-right: solid 10px #e1fede;
+  border-top: solid 10px #303030;
+  border-right: solid 10px #303030;
   border-top-right-radius: 25px;
 }
 .card .content .price::before {
@@ -100,7 +103,7 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  box-shadow: -10px -10px 0 #e1fede;
+  box-shadow: -10px -10px 0 #303030;
 }
 .card .content .price::after {
   content: "";
@@ -110,12 +113,12 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  box-shadow: -10px 10px 0 #064e3b;
+  box-shadow: -10px 10px 0 #edf1eb;
 }
 .card .content .price a {
   position: relative;
-  background-color: #e1fede;
-  color: #064e3b;
+  background-color:  #303030;
+  color: #edf1eb;
   padding: 1px 10px;
   margin: 15px 15px;
   display: block;
@@ -125,17 +128,26 @@
 
 /* les hover */
 .card:hover .content {
-  background-color: rgb(16 185 129); /* emerald-500 */
+ background-color: #ffc400; /* emerald-500 */
   transition: background-color 0.3s ease;
 }
 
+.content:hover{
+  color: #edf1eb;
+
+}
 .card:hover .content .price {
-  background-color: rgb(16 185 129); /* emerald-500 */
+ background-color: #ffc400; /* emerald-500 */
   transition: background-color 0.3s ease;
+}
+.card:hover .content .price a{
+  background-color: #fff1c4; /* emerald-500 */
+  transition: background-color 0.3s ease;
+  color: #303030;
 }
 
 .card:hover .content .price::after {
-  box-shadow: -10px 10px 0 rgb(16 185 129);
+  box-shadow: -10px 10px 0 #ffc400;
   transition: box-shadow 0.3s ease;
 }
 /* //////////////////////////////// */
@@ -144,7 +156,8 @@
   position: relative;
   counter-increment: step-counter;
   color: rgb(16 185 129);
-  border: solid 10px #e1fede;
+  border: solid 10px #303030;
+  
 }
 .step:hover {
   background: rgb(16 185 129);
@@ -159,7 +172,7 @@
   border-right: solid 40px rgb(16 185 129);
   border-top: solid 40px rgb(16 185 129);
   border-bottom: solid 40px rgb(16 185 129);
-  border-left: #e1fede solid 40px;
+  border-left: #303030 solid 40px;
   right: 100;
   top: -130px;
   z-index: -10;
@@ -168,7 +181,7 @@
  border-right: solid 40px rgb(16 185 129);
   border-top: solid 40px rgb(16 185 129);
   border-bottom: solid 40px rgb(16 185 129);
-  border-left: #e1fede solid 40px;} */
+  border-left: #303030 solid 40px;} */
 .step::before {
   display: flex;
   justify-content: center;
@@ -183,7 +196,7 @@
   height: 100px;
   border-radius: 50%;
   background: rgb(16 185 129);
-  border: solid 4px #e1fede;
+  border: solid 4px #303030;
   color: #064e3b;
 
   font-weight: bolder;
@@ -200,7 +213,7 @@
   position: relative;
   counter-increment: step-counter;
   color: rgb(16 185 129);
-  border: solid 10px #e1fede;
+  border: solid 10px #303030;
 }
 .step-impaire:hover {
   background: rgb(16 185 129);
@@ -220,7 +233,7 @@
   height: 100px;
   border-radius: 50%;
   background: rgb(16 185 129);
-  border: solid 4px #e1fede;
+  border: solid 4px #303030;
   color: #064e3b;
 
   font-weight: bolder;
@@ -238,7 +251,7 @@
     width:3px ;
     height:80px ;
     color: #064e3b;
-    background-color: #064e3b;
+   background-color: #ffc400;
     
 } */
 .step-impaire:hover::before {
@@ -264,3 +277,10 @@
     margin-top: 10%;
   }
 }
+ 
+  svg{
+    color: #303030;
+  }
+  .card:hover svg{
+    color: #fff1c4!important;
+  }

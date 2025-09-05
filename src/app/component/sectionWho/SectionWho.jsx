@@ -16,19 +16,19 @@ export default function SectionWho() {
       value: 200,
       suffix: "+",
       label: "Jeunes accompagnés",
-      color: "from-emerald-400 to-emerald-900",
+      color: "from-[#fff700] to-[#ffc400]",
     },
     {
       value: 92,
       suffix: "%",
       label: "Taux de réussite",
-      color: "from-emerald-400 to-emerald-900",
+      color: "from-[#fff700] to-[#ffc400]",
     },
     {
       value: 85,
       suffix: "%",
       label: "Confiance améliorée",
-      color: "from-emerald-400 to-emerald-900",
+      color: "from-[#fff700] to-[#ffc400]",
     },
   ];
 
@@ -67,12 +67,12 @@ export default function SectionWho() {
     <section
       id="SectionWho"
       ref={ref}
-      className="w-full h-[800px] flex flex-col md:flex-row  md:h-screen"
+      className="w-full mgn h-[800px] flex flex-col md:flex-row  md:h-screen"
     >
       {/* Partie gauche */}
-      <div className="flex flex-col gap-10 text-center md:text-start md:w-1/2 ">
-        <h2 className="uppercase md:text-3xl">
-          Qui sommes <br /> nous
+      <div className="flex flex-col gap-10 text-center justify-center items-center md:text-center md:w-[40%] md:ps-10">
+        <h2 className="uppercase  w-1/2 md:w-full md:text-6xl">
+          Qui sommes  nous ?
         </h2>
         <p className="w-full md:w-[80%]">
           Elo'sens accompagne votre développement personnel à travers l'art
@@ -83,7 +83,7 @@ export default function SectionWho() {
       </div>
 
       {/* Partie droite */}
-      <div className="flex flex-col justify-center items-center md:w-1/2 p-8 gap-6">
+      <div className="flex flex-col md:mt-10 justify-center items-center md:w-1/2 p-8 gap-6">
         {stats.map((stat, index) => {
           const percent = Math.min(
             (animatedValues[index] / stat.value) * 100,
@@ -112,7 +112,7 @@ export default function SectionWho() {
             </div>
           );
         })}
-        <button className=" w-full px-6 py-2 bg-emerald-800 text-white rounded-lg shadow-md hover:bg-emerald-900 transition-colors">
+        <button className=" w-full px-6 py-2 bg-[#303030] text-white rounded-lg shadow-md hover:bg-[#ffc400] transition-colors">
           Nous Contacter
         </button>
       </div>

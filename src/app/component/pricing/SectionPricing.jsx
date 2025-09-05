@@ -35,7 +35,7 @@ export default function SectionPricing() {
   }
 
   return (
-    <section id="sectionPricing">
+    <section id="sectionPricing" className="bg-[#303030] ">
       {cliquer ? (
         <div
           className={`w-full h-screen flex flex-col justify-center items-center transition-opacity duration-500 ${
@@ -47,13 +47,13 @@ export default function SectionPricing() {
             {/* /////////////////// */}
             <div className="w-full gap-6 md:gap-0 h-screen flex flex-col justify-center items-center">
               <div className="w-[60%] flex items-center justify-start ">
-                <div className="step-impaire w-[310px] h-[30vh] bg-emerald-900"></div>
+                <div className="step-impaire w-[310px] h-[30vh] bg-[#edf1eb]"></div>
               </div>
               <div className="w-[60%] flex justify-end  ">
-                <div className="step w-[310px] h-[30vh] bg-emerald-900"></div>
+                <div className="step w-[310px] h-[30vh] bg-[#edf1eb]"></div>
               </div>
               <div className="w-[60%] flex justify-start ">
-                <div className="step-impaire w-[310px] h-[30vh] bg-emerald-900"></div>
+                <div className="step-impaire w-[310px] h-[30vh] bg-[#edf1eb]"></div>
               </div>
             </div>
             <div className="h-full flex flex-col justify-end pb-20 items-center ">
@@ -100,15 +100,15 @@ export default function SectionPricing() {
               </div>
               <div className="card mb-5 md:mb-0">
                 <div className="imgbx association"></div>
-                <div className="content bg-emerald-900">
-                  <div className="price bg-emerald-900 ">
+                <div className="content bg-[#edf1eb]">
+                  <div className="price bg-[#edf1eb] ">
                     <a href="">
                       <span className="text-[0.6em] ">à partir de</span> <br />
                       1000 €
                     </a>
                   </div>
                   <div className="h-full w-full flex flex-col">
-                    <p className="texte-vert text-[0.67em] text-start flex justify-center items-center h-full px-5 ">
+                    <p className=" text-[0.67em] text-start flex justify-center items-center h-full px-5 ">
                       vous etes une école et souhaiter rendre votre programe
                       avtif, amélioriere la cohesion entre les eleves, les profs
                       et les éducateur alors se programme est fait pour vous
@@ -140,15 +140,15 @@ export default function SectionPricing() {
               </div>
               <div className="card mb-5 md:mb-0">
                 <div className="imgbx ecole"></div>
-                <div className="content bg-emerald-900">
-                  <div className="price bg-emerald-900 ">
+                <div className="content bg-[#edf1eb]">
+                  <div className="price bg-[#edf1eb] ">
                     <a href="">
                       <span className="text-[0.6em] ">à partir de</span> <br />
                       1000 €
                     </a>
                   </div>
                   <div className="h-full w-full flex flex-col">
-                    <p className="texte-vert text-[0.67em] text-start flex justify-center items-center h-full px-5 ">
+                    <p className=" text-[0.67em] text-start flex justify-center items-center h-full px-5 ">
                       vous etes une école et souhaiter rendre votre programe
                       avtif, amélioriere la cohesion entre les eleves, les profs
                       et les éducateur alors se programme est fait pour vous
@@ -180,15 +180,15 @@ export default function SectionPricing() {
               </div>
               <div className="card mb-5 md:mb-0">
                 <div className="imgbx buisnes"></div>
-                <div className="content bg-emerald-900">
-                  <div className="price bg-emerald-900 ">
+                <div className="content bg-[#edf1eb]">
+                  <div className="price bg-[#edf1eb] ">
                     <a href="">
                       <span className="text-[0.6em] ">à partir de</span> <br />
                       1000 €
                     </a>
                   </div>
                   <div className="h-full w-full flex flex-col">
-                    <p className="texte-vert text-[0.67em] text-start flex justify-center items-center h-full px-5 ">
+                    <p className=" text-[0.67em] text-start flex justify-center items-center h-full px-5 ">
                       vous etes une école et souhaiter rendre votre programe
                       avtif, amélioriere la cohesion entre les eleves, les profs
                       et les éducateur alors se programme est fait pour vous

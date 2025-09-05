@@ -1,4 +1,26 @@
 @import "tailwindcss";
+@font-face {
+  font-family: "Nexa";
+  src: url("/fonts/Nexa-Heavy.ttf") format("truetype");
+  font-weight: 200; /* ExtraLight */
+  font-style: normal;
+}
+h2,
+h4,
+h5 {
+  font-family: "Nexa", sans-serif;
+  color: rgba(255, 255, 255, 0.918) !important;
+  background: #171717;
+  padding: 10px;
+  border: solid 6px white;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Nexa", sans-serif;
+}
 
 :root {
   --background: #ffffff;
@@ -29,8 +51,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  background: radial-gradient(#e1fede, #00ff3c29);
-  /* background-color: #e0ffdd; */
+  /* background: radial-gradient(#e1fede00, #00ff3c29); */
+  background-color: #edf1eb;
+
   cursor: default;
   box-sizing: border-box;
 }
@@ -43,14 +66,17 @@ h1 {
   text-align: center !important;
 }
 h2 {
+  color: #ffc400;
+}
+/* p {
   color: #064e3b;
+} */
+/* .texte-vert {
+  color: #e1fede ;
 }
-p {
-  color: #064e3b;
-}
-.texte-vert {
-  color: #e1fede !important;
-}
+.texte-vert:hover {
+  color:#064e3b!important;
+} */
 .scroll-animate {
   opacity: 0;
   transform: translateY(-10px);
@@ -64,6 +90,7 @@ p {
 li {
   cursor: pointer;
 }
+
 .logo {
   width: 100px;
   height: 100px;
@@ -85,15 +112,32 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.38);
 }
 .fondtkt {
-  border-radius: 45px;
-  background: #e0e0e0;
-  box-shadow: 20px 20px 68px #bebebe, -20px -20px 68px #ffffff;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  cursor: pointer;
+}
+.fondtkt2 {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #2b2b2b, #333333);
+  box-shadow: 20px 20px 71px #141414, -20px -20px 71px #4c4c4c;
+  color: white;
+  cursor: default;
+}
+
+.fondtkt:hover {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #e6b000, #ffd200);
+  .bi {
+    background: #edf1eb !important;
+    color: #e6b000 !important;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   #logo {
     font-size: 7em !important;
-    color: rgb(179, 255, 0) !important;
+    color: rgb(255, 255, 255) !important;
   }
 }
 @media (max-width: 769px) {
@@ -112,6 +156,6 @@ button {
   #logo {
     font-size: 201% !important;
     transform: translateY(-20%) !important;
-    color: rgb(165, 16, 16) !important;
+    color: rgb(245, 245, 245) !important;
   }
 }

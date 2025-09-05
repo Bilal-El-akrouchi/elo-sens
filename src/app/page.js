@@ -16,12 +16,10 @@ export default function Home() {
         <Header/>
         <SectionWho/>
         <SectionPricing/>
-        <div id="fondOndule">
 
         <SectionArtOratoire/>
-        <SectionAccrochage/>
-        </div>
         <SectionSellPoint/>
+        <SectionAccrochage/>
         <SectionContact/>
       </main>
     </>

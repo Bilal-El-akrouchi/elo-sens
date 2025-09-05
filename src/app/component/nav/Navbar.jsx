@@ -39,7 +39,7 @@ export default function Navbar() {
     <nav className="relative z-10 ">
       <div
         className={`fixed py-4 flex justify-center items-center w-full transition-all duration-300 ${
-          scrolled ? "bg-emerald-900/50 backdrop-blur-md shadow-md" : ""
+          scrolled ? "bg-[#303030]/50 backdrop-blur-md shadow-md" : ""
         }`}
         style={{
           transform: hidden ? "translateY(-200%)" : "translateY(0)",
@@ -56,21 +56,21 @@ export default function Navbar() {
               scrolled ? "text-emerald-50" : "hidden  "
             }`}
           >
-            <li className="cursor-pointer hover:text-blue-500 transition">
+            <li class="text-white transition-transform duration-300  hover:font-bold hover:scale-110">
               Art oratoire
             </li>
-            <li className="cursor-pointer hover:text-blue-500 transition">
+            <li class="text-white transition-transform duration-300  hover:font-bold hover:scale-110">
               Accrochage scolaire
             </li>
           </div>
 
           {/* Logo au milieu */}
           <li
-            className={`relative flex justify-center items-center  text-center bg-red-100text-center   w-[30%] font-bold cursor-pointer" transition-colors duration-300 ${
+            className={`hover:scale-110 transition-transform duration-300 relative flex justify-center items-center  text-center bg-red-100text-center   w-[30%] font-bold cursor-pointer" transition-colors duration-300 ${
               scrolled ? "text-emerald-50 " : "hidden "
             }`}
           >
-          <div className="logo absolute translate-y-6" ></div>
+            <div className="logo absolute translate-y-6"></div>
           </li>
 
           {/* Côté droit */}
@@ -79,10 +79,10 @@ export default function Navbar() {
               scrolled ? "text-emerald-50" : "hidden  "
             }`}
           >
-            <li className="cursor-pointer hover:text-blue-500 transition">
+            <li class="text-white transition-transform duration-300  hover:font-bold hover:scale-110">
               Aboute
             </li>
-            <li className="cursor-pointer hover:text-blue-500 transition">
+            <li class="text-white transition-transform duration-300  hover:font-bold hover:scale-110">
               Contacte
             </li>
           </div>
@@ -92,7 +92,9 @@ export default function Navbar() {
       <div
         id="logo"
         className={`" w-full absolute translate-y-[100%] sm:translate-y-[80%] md:translate-y-[20%]  text-[3rem] sm:text-[5rem] md:text-[10rem] justify-center items-center text-center bg-red-100text-center font-bold cursor-pointer" transition-colors duration-300 ${
-          scrolled ? " text-transparent" : "  text-emerald-900  "
+          scrolled
+            ? " text-transparent pointer-events-none "
+            : "  text-white border-white  "
         }`}
       >
         ELO'SENS
