@@ -16,7 +16,7 @@ export default function Home() {
         <Header/>
         <SectionWho/>
         <SectionPricing/>
-
+{/* METTRE DU ROSE ORANGE VERT A CHAQUEZ SECTION  */}
         <SectionArtOratoire/>
         <SectionSellPoint/>
         <SectionAccrochage/>

@@ -18,7 +18,7 @@ export default function SectionPricing() {
   }
 
   function resetTitre() {
-    changeTitre("TARIFS");
+    changeTitre("ELO'prix");
   }
 
   function toggleCliquer() {
@@ -77,7 +77,7 @@ export default function SectionPricing() {
         >
           <div className="w-full relative flex justify-center items-center">
             <h2
-              className={`md:absolute top-6 uppercase md:text-3xl text-center transition-opacity duration-300 ${
+              className={`md:absolute  top-0 uppercase md:text-6xl text-center transition-opacity duration-300 ${
                 fadeTitre ? "opacity-100" : "opacity-0"
               }`}
             >

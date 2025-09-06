@@ -36,7 +36,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="relative z-10 ">
+    <nav className="relative z-50 ">
       <div
         className={`fixed py-4 flex justify-center items-center w-full transition-all duration-300 ${
           scrolled ? "bg-[#303030]/50 backdrop-blur-md shadow-md" : ""
