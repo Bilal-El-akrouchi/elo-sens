@@ -64,6 +64,23 @@ export default function SectionPricing() {
       document.body.style.overflow = "auto"; // réactive scroll normal
     };
   }, [cliquer]);
+  const [stepHeight, setStepHeight] = useState(160); // valeur par défaut
+
+  useEffect(() => {
+    function updateStepHeight() {
+      if (window.innerWidth >= 768) {
+        // md en Tailwind = 768px
+        setStepHeight(90);
+      } else {
+        setStepHeight(110);
+      }
+    }
+
+    updateStepHeight(); // appel au montage
+    window.addEventListener("resize", updateStepHeight);
+
+    return () => window.removeEventListener("resize", updateStepHeight);
+  }, []);
 
   return (
     <section id="sectionPricing" className="bg-[#303030] ">
@@ -77,28 +94,49 @@ export default function SectionPricing() {
           {selectedCard === "association" && (
             <div className="flex w-full h-full relative overflow-hidden">
               <div
-                className="w-full flex flex-col items-center transition-transform duration-700"
-                style={{ transform: `translateY(-${currentStep * 50}vh)` }}
+                className="w-full text-center flex flex-col items-center transition-transform duration-700"
+                style={{
+                  transform: `translateY(-${currentStep * stepHeight}vh)`,
+                }}
               >
                 <div className="w-[60%] flex items-center justify-start ">
-                  <div className="step-impaire w-[310px] h-[50vh] choixoe">
-                    Étape 1 pour les associations
+                  <div className="step-impaire w-[400px] h-[100vh] md:h-auto overflow-y-scroll md:overflow-visible md:mt-20 mt-5 choixoe text-sm">
+                    <span className="md:text-xl ">
+                      Chaque association est unique, chaque groupe a ses propres
+                      réalités
+                    </span>
+                    <br /> <br />
+                    Ensemble, nous définissons : <br /> ● Les thèmes à aborder,
+                    en fonction des besoins spécifiques de votre public. <br />{" "}
+                    ● La durée : un cycle d’un mois, avec la possibilité de
+                    prolonger, d’approfondir les ateliers et de développer
+                    ensemble des projets communs. <br /> ● Le nombre de
+                    participants : idéalement jusqu’à 20 jeunes, pour garantir
+                    la qualité et la dynamique du groupe. Nous travaillons main
+                    dans la main pour bâtir une animation qui marque à vie.
                   </div>
                 </div>
-                <div className="w-[60%] flex justify-end">
-                  <div className="step w-[310px] h-[50vh] bg-[#edf1eb]">
-                    Étape 2 pour les associations
+                <div className="absolute right-150 top-120 text-5xl text-white animate-bounce">
+                  <i class="bi bi-arrow-down-circle-fill"></i>
+                </div>
+                <div className="w-[60%] flex mt-10 md:mt-50 justify-end">
+                  <div className="step w-[310px]   choixoe">
+                    il ne vous reste plus qu'a passez à l’action ! Il ne reste
+                    qu’une étape : choisir une date et accueillir l’atelier dans
+                    vos locaux. Nous apportons nos méthodes, notre énergie et
+                    notre expérienceet nos jeunes pour que vos jeunes vivent un
+                    moment fort, porteur de sens et d’avenir.{" "}
                   </div>
                 </div>
               </div>
 
               {/*:::::::::::::::::::::::::::::::: bouton retour */}
-              <div className="absolute bottom-10 flex justify-center w-full">
+              <div className="absolute top-10 left-130 flex justify-center w-full">
                 <button
                   onClick={toggleCliquer}
                   className="px-6 py-4 text-xl font-bold rounded-2xl bg-red-600 text-white hover:bg-red-800 transition"
                 >
-                  ⬅ choix précédent
+                  précédent
                 </button>
               </div>
             </div>
@@ -108,27 +146,44 @@ export default function SectionPricing() {
           {selectedCard === "école" && (
             <div className="flex w-full h-full relative overflow-hidden">
               <div
-                className="w-full flex flex-col items-center transition-transform duration-700"
-                style={{ transform: `translateY(-${currentStep * 50}vh)` }}
+                className="w-full text-center flex flex-col items-center transition-transform duration-700"
+                style={{
+                  transform: `translateY(-${currentStep * stepHeight}vh)`,
+                }}
               >
                 <div className="w-[60%] flex items-center justify-start ">
-                  <div className="step-impaire w-[310px] h-[50vh] bg-[#edf1eb]">
-                    Étape 1 pour les écoles
+                  <div className="step-impaire w-[400px] h-[100vh] md:h-auto overflow-y-scroll md:overflow-visible md:mt-20 mt-5 choixoe text-sm">
+                    <span className="text-xl">Nos offres pour les écoles</span>{" "}
+                    <br />
+                    Nous proposons des ateliers autour de l’accrochage à la vie,
+                    de la pair-aidance et de l’art oratoire. Ces animations
+                    offrent aux élèves un espace pour s’exprimer, renforcer leur
+                    confiance et améliorer la cohésion en classe.
                   </div>
                 </div>
-                <div className="w-[60%] flex justify-end">
-                  <div className="step w-[310px] h-[50vh] bg-[#edf1eb]">
-                    Étape 2 pour les écoles
+                <div className="absolute right-150 top-120 text-5xl text-white animate-bounce">
+                  <i class="bi bi-arrow-down-circle-fill"></i>
+                </div>
+                <div className="w-[60%] flex mt-10 md:mt-50 justify-end">
+                  <div className="step w-[310px]   choixoe">
+                    Prenez contact et préparons ensemble l’intervention Avec
+                    l’équipe éducative, nous définissons les thèmes à aborder
+                    (estime de soi, rôle du délégué, cohésion de groupe, prise
+                    de parole, lutte contre le décrochage...). La durée : en
+                    général un cycle d’un mois, avec la possibilité
+                    d’approfondir ou de créer des projets communs. Le nombre
+                    d'heure : 4 séance de 2x50 minutes, une fois par semaine
                   </div>
                 </div>
               </div>
 
-              <div className="absolute bottom-10 flex justify-center w-full">
+              {/*:::::::::::::::::::::::::::::::: bouton retour */}
+              <div className="absolute top-10 left-130 flex justify-center w-full">
                 <button
                   onClick={toggleCliquer}
                   className="px-6 py-4 text-xl font-bold rounded-2xl bg-red-600 text-white hover:bg-red-800 transition"
                 >
-                  ⬅ choix précédent
+                  précédent
                 </button>
               </div>
             </div>
@@ -207,7 +262,7 @@ export default function SectionPricing() {
                   <div className="price bg-[#edf1eb] ">
                     <a href="">
                       <span className="text-[0.6em] ">à partir de</span> <br />
-                      200 €
+                      800 €
                     </a>
                   </div>
                   <div className="h-full w-full flex flex-col pt-5">
@@ -253,13 +308,20 @@ export default function SectionPricing() {
                   <div className="price bg-[#edf1eb] ">
                     <a href="">
                       <span className="text-[0.6em] ">à partir de</span> <br />
-                      1000 €
+                      500 €
                     </a>
                   </div>
-                  <div className="h-full w-full flex flex-col">
-                    <p className=" text-[0.67em] text-start flex justify-center items-center h-full px-5 ">
-                      vous etes une école ...
-                      <div className="h-full text-emerald-200-200 flex flex-col justify-end items-end pb-5">
+                  <div className="h-full w-full flex flex-col pt-5">
+                    <p className=" text-[0.67em] text-start flex flex-col justify-center items-start h-full px-5 ">
+                      <span className="text-[1.4em] ">
+                        Nos offres pour les écoles{" "}
+                      </span>
+                      Découvrez nos animations Nous proposons des ateliers
+                      autour de l’accrochage à la vie, de la pair-aidance et de
+                      l’art oratoire. Ces animations offrent aux élèves un
+                      espace pour s’exprimer, renforcer leur confiance et
+                      améliorer la cohésion en classe.
+                      <div className="h-full text-emerald-200-200 flex justify-end items-end pb-5">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
@@ -291,14 +353,21 @@ export default function SectionPricing() {
                 <div className="content bg-[#edf1eb]">
                   <div className="price bg-[#edf1eb] ">
                     <a href="">
-                      <span className="text-[0.6em] ">à partir de</span> <br />
-                      1000 €
+                      <span className="text-[0.6em] ">commande</span> <br />
+                      sur devis
                     </a>
+                      
                   </div>
-                  <div className="h-full w-full flex flex-col">
-                    <p className=" text-[0.67em] text-start flex justify-center items-center h-full px-5 ">
-                      vous etes une école ...
-                      <div className="h-full text-emerald-200-200 flex flex-col justify-end items-end pb-5">
+                  <div className="h-full w-full flex flex-col pt-5">
+                    <p className=" text-[0.67em] text-start flex flex-col justify-center items-start h-full px-5 ">
+                      <span className="text-[1.4em] ">
+                        Nos offres sur-mesures
+                      </span>
+                      Vous avez un projet en tete et désirez une offre sur
+                      mesure correspondant parfaitement a vos attentes et besoin
+                      ? alors cette offre est faite pour vous, n'attendez plus
+                      lancez vous !
+                      <div className="h-full text-emerald-200-200 flex justify-end items-end pb-5">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"

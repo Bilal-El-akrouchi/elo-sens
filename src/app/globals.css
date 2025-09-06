@@ -161,7 +161,8 @@ button {
 }
 .choixoe {
   border-radius: 62px;
-  background: linear-gradient(145deg, #2e2e2e, #373737);
-  box-shadow: 21px 21px 100px #141414, -21px -21px 100px #525252;
-  
+  background: linear-gradient(145deg, #313131, #3a3a3a);
+  box-shadow: 18px 18px 53px #252525, -18px -18px 53px #474747;
+  cursor: default ;
+
 }
