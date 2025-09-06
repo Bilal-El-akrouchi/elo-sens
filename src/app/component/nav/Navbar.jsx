@@ -21,7 +21,7 @@ export default function Navbar() {
         if (currentScrollY > lastScrollY.current + 0) {
           // Scroll vers le bas assez important => cacher navbar
           setHidden(true);
-        } else if (lastScrollY.current > currentScrollY + 40) {
+        } else if (lastScrollY.current > currentScrollY + 30) {
           // Scroll vers le haut assez important => montrer navbar
           setHidden(false);
         }
@@ -85,10 +85,11 @@ export default function Navbar() {
             }`}
           >
             <li class="text-white transition-transform duration-300  hover:font-bold hover:scale-110">
-              Aboute
+             <Link href="#about" className="first-letter:uppercase">à propos</Link> 
             </li>
             <li class="text-white transition-transform duration-300  hover:font-bold hover:scale-110">
-              Contacte
+             <Link href="#tarifs" className="first-letter:uppercase">Tarifs</Link> 
+              
             </li>
           </div>
         </ul>

@@ -83,7 +83,7 @@ export default function SectionPricing() {
   }, []);
 
   return (
-    <section id="sectionPricing" className="bg-[#303030] ">
+    <section id="tarifs" className="bg-[#303030] ">
       {cliquer ? (
         <div
           className={`w-full h-screen flex flex-col justify-center items-center transition-opacity duration-500 ${

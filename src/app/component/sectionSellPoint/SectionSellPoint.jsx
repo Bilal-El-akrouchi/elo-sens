@@ -5,7 +5,7 @@ export default function SectionSellPoint() {
   return (
     <>
       <section
-        id="sellPoint"
+        id="about"
         className="h-screen w-full bg-[#303030] flex items-center justify-center text-center"
       >
         <div className="w-3/5  fondtkt2 hover:border-black flex  items-center flex-col gap-11 px-5 pb-2">

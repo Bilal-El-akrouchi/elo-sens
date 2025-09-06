@@ -1,11 +1,13 @@
 "use client";
 import "./formulaire.css";
-
+import Link from "next/link";
 
 export default function Formulaire() {
   return (
     <>
-              <form action="https://formspree.io/f/xpwrvopy" method="POST"
+      {/* <div className="h-screen w-full bg-[#313131] ">
+
+              <form action="https://formspree.io/f/xpwrvopy" className="" method="POST"
             className="mt-10 bg-[#E6F4FE] p-8 rounded-xl shadow-lg max-w-xl mx-auto space-y-6">
             <div>
                 <input type="text" name="_gotcha" className="hidden" />
@@ -29,6 +31,19 @@ export default function Formulaire() {
                 Envoyer
             </button>
         </form>
+              </div> */}
+      <div className="uppercase h-screen w-full bg-[#313131] flex flex-col justify-center items-center  text-amber-50">
+        <div className="choixoe flex-col text-9xl h-2/4 flex justify-center items-center text-center w-5/6 ">
+          très bientôt !
+          <div className="text-xl">
+            un formulaire de contact, en attendant: <br />
+            mail: contact@elosens.com
+          </div>
+        </div>
+        <div className="bg-red-600 mt-10 p-5">
+          <Link href="/">retour</Link>
+        </div>
+      </div>
     </>
   );
 }
