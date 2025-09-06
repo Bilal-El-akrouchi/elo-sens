@@ -1,6 +1,8 @@
 "use client";
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { useReducer } from "react";
+
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,7 +21,7 @@ export default function Navbar() {
         if (currentScrollY > lastScrollY.current + 0) {
           // Scroll vers le bas assez important => cacher navbar
           setHidden(true);
-        } else if (lastScrollY.current > currentScrollY + 20) {
+        } else if (lastScrollY.current > currentScrollY + 40) {
           // Scroll vers le haut assez important => montrer navbar
           setHidden(false);
         }
@@ -36,7 +38,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="relative z-50 ">
+    <nav className="relative z-50 " id="top">
       <div
         className={`fixed py-4 flex justify-center items-center w-full transition-all duration-300 ${
           scrolled ? "bg-[#303030]/50 backdrop-blur-md shadow-md" : ""
@@ -57,20 +59,23 @@ export default function Navbar() {
             }`}
           >
             <li class="text-white transition-transform duration-300  hover:font-bold hover:scale-110">
-              Art oratoire
+              <Link href="#artOratoire">Art oratoire</Link>
             </li>
             <li class="text-white transition-transform duration-300  hover:font-bold hover:scale-110">
-              Accrochage scolaire
+             <Link href="#accrochage" scroll={true} >Accrochage scolaire</Link> 
             </li>
           </div>
 
           {/* Logo au milieu */}
+  
           <li
             className={`hover:scale-110 transition-transform duration-300 relative flex justify-center items-center  text-center bg-red-100text-center   w-[30%] font-bold cursor-pointer" transition-colors duration-300 ${
               scrolled ? "text-emerald-50 " : "hidden "
             }`}
           >
-            <div className="logo absolute translate-y-6"></div>
+            <Link className="logo absolute translate-y-6" href="#top" >
+            <div></div>
+            </Link>
           </li>
 
           {/* Côté droit */}

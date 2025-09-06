@@ -100,7 +100,7 @@ export default function SectionPricing() {
                 }}
               >
                 <div className="w-[60%] flex items-center justify-start ">
-                  <div className="step-impaire w-[400px] h-[100vh] md:h-auto overflow-y-scroll md:overflow-visible md:mt-20 mt-5 choixoe text-sm">
+                  <div className="step-impaire w-[400px] max-h-[90vh] md:h-auto overflow-y-scroll md:overflow-visible md:mt-20 mt-5 choixoe text-sm">
                     <span className="md:text-xl ">
                       Chaque association est unique, chaque groupe a ses propres
                       réalités
@@ -116,10 +116,10 @@ export default function SectionPricing() {
                     dans la main pour bâtir une animation qui marque à vie.
                   </div>
                 </div>
-                <div className="absolute right-150 top-120 text-5xl text-white animate-bounce">
+                <div className="absolute right-4 top-110 md:right-150 md:top-120 text-xl md:text-5xl text-white animate-bounce">
                   <i class="bi bi-arrow-down-circle-fill"></i>
                 </div>
-                <div className="w-[60%] flex mt-10 md:mt-50 justify-end">
+                <div className="w-[60%] flex mt-30 md:mt-50 justify-end">
                   <div className="step w-[310px]   choixoe">
                     il ne vous reste plus qu'a passez à l’action ! Il ne reste
                     qu’une étape : choisir une date et accueillir l’atelier dans
@@ -131,12 +131,21 @@ export default function SectionPricing() {
               </div>
 
               {/*:::::::::::::::::::::::::::::::: bouton retour */}
-              <div className="absolute top-10 left-130 flex justify-center w-full">
+              <div className="absolute top-0 right-30 sm:top-10 sm:right-70 md:top-10 md:left-134 flex justify-center w-full">
+                {/* Version mobile : X */}
                 <button
                   onClick={toggleCliquer}
-                  className="px-6 py-4 text-xl font-bold rounded-2xl bg-red-600 text-white hover:bg-red-800 transition"
+                  className="px-2 py-1 tex-3xl  sm:text-5xl font-bold rounded-full text-amber-400  hover:bg-red-800 transition md:hidden"
                 >
-                  précédent
+                  <i class="bi bi-arrow-left-circle-fill "></i>{" "}
+                </button>
+
+                {/* Version desktop : Bouton texte */}
+                <button
+                  onClick={toggleCliquer}
+                  className="hidden md:block px-4 py-2 text-lg font-bold rounded-2xl bg-red-600 text-white hover:bg-red-800 transition"
+                >
+                  Précédent
                 </button>
               </div>
             </div>
@@ -152,20 +161,23 @@ export default function SectionPricing() {
                 }}
               >
                 <div className="w-[60%] flex items-center justify-start ">
-                  <div className="step-impaire w-[400px] h-[100vh] md:h-auto overflow-y-scroll md:overflow-visible md:mt-20 mt-5 choixoe text-sm">
-                    <span className="text-xl">Nos offres pour les écoles</span>{" "}
+                  <div className="step-impaire w-[450px] sm:mb-120 md:h-auto overflow-y-scroll md:overflow-visible md:mt-20 mt-5 choixoe text-sm">
+                    <span className="sm:text-3xl">Nos offres pour les écoles</span>{" "}
                     <br />
+                    <p className="sm:text-xl md:text-m mt-4">
+
                     Nous proposons des ateliers autour de l’accrochage à la vie,
                     de la pair-aidance et de l’art oratoire. Ces animations
                     offrent aux élèves un espace pour s’exprimer, renforcer leur
                     confiance et améliorer la cohésion en classe.
+                    </p>
                   </div>
                 </div>
                 <div className="absolute right-150 top-120 text-5xl text-white animate-bounce">
                   <i class="bi bi-arrow-down-circle-fill"></i>
                 </div>
-                <div className="w-[60%] flex mt-10 md:mt-50 justify-end">
-                  <div className="step w-[310px]   choixoe">
+                <div className="w-[60%] flex mt-40 md:mt-80 justify-end">
+                  <div className="step text-sm w-[310px] choixoe">
                     Prenez contact et préparons ensemble l’intervention Avec
                     l’équipe éducative, nous définissons les thèmes à aborder
                     (estime de soi, rôle du délégué, cohésion de groupe, prise
@@ -178,12 +190,21 @@ export default function SectionPricing() {
               </div>
 
               {/*:::::::::::::::::::::::::::::::: bouton retour */}
-              <div className="absolute top-10 left-130 flex justify-center w-full">
+               <div className="absolute top-0 right-30 sm:top-10 sm:right-70 md:top-10 md:left-134 flex justify-center w-full">
+                {/* Version mobile : X */}
                 <button
                   onClick={toggleCliquer}
-                  className="px-6 py-4 text-xl font-bold rounded-2xl bg-red-600 text-white hover:bg-red-800 transition"
+                  className="px-2  tex-3xl  sm:text-5xl font-bold rounded-full text-amber-400  hover:bg-red-800 transition md:hidden"
                 >
-                  précédent
+                  <i class="bi bi-arrow-left-circle-fill "></i>{" "}
+                </button>
+
+                {/* Version desktop : Bouton texte */}
+                <button
+                  onClick={toggleCliquer}
+                  className="hidden md:block px-4 py-2 text-lg font-bold rounded-2xl bg-red-600 text-white hover:bg-red-800 transition"
+                >
+                  Précédent
                 </button>
               </div>
             </div>
@@ -196,29 +217,38 @@ export default function SectionPricing() {
                 className="w-full flex flex-col items-center transition-transform duration-700"
                 style={{ transform: `translateY(-${currentStep * 50}vh)` }}
               >
-                <div className="w-[80%] bg-red-50 flex items-center justify-start ">
-                  <div className="step-impaire w-[440px] choixoe">
+                <div className="w-[80%] flex items-center justify-start ">
+                  <div className="step-impaire mt-30 mb-30 w-[240px] choixoe">
                     <span className="text-xl ">
-                      Prenez contact et co-construisons l’atelier{" "}
+                      Prenez contact et co-construisons l’atelier enssemble
                     </span>
                     <br /> <br />
-                    Chaque association est unique chaque groupe a ses propres
+                    Chaque projet est unique et chaque groupe a ses propres
                     réalités...
                   </div>
                 </div>
                 <div className="w-[80%] flex justify-end ">
                   <div className="step w-[310px]  choixoe">
-                    Étape 2 pour votre projet. Passez à l’action 🚀
+                    contactez nous simplement par telephone ou par mail pour discuter de votre projet
                   </div>
                 </div>
               </div>
 
-              <div className="absolute bottom-10 flex justify-center w-full">
+                <div className="absolute top-0 right-30 sm:top-10 sm:right-70 md:top-10 md:left-134 flex justify-center w-full">
+                {/* Version mobile : X */}
                 <button
                   onClick={toggleCliquer}
-                  className="px-6 py-4 text-xl font-bold rounded-2xl bg-red-600 text-white hover:bg-red-800 transition"
+                  className="px-2  tex-3xl  sm:text-5xl font-bold rounded-full text-amber-400  hover:bg-red-800 transition md:hidden"
                 >
-                  ⬅ choix précédent
+                  <i class="bi bi-arrow-left-circle-fill "></i>{" "}
+                </button>
+
+                {/* Version desktop : Bouton texte */}
+                <button
+                  onClick={toggleCliquer}
+                  className="hidden md:block px-4 py-2 text-lg font-bold rounded-2xl bg-red-600 text-white hover:bg-red-800 transition"
+                >
+                  Précédent
                 </button>
               </div>
             </div>
@@ -356,7 +386,6 @@ export default function SectionPricing() {
                       <span className="text-[0.6em] ">commande</span> <br />
                       sur devis
                     </a>
-                      
                   </div>
                   <div className="h-full w-full flex flex-col pt-5">
                     <p className=" text-[0.67em] text-start flex flex-col justify-center items-start h-full px-5 ">
