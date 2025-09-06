@@ -159,3 +159,9 @@ button {
     color: rgb(245, 245, 245) !important;
   }
 }
+.choixoe {
+  border-radius: 62px;
+  background: linear-gradient(145deg, #2e2e2e, #373737);
+  box-shadow: 21px 21px 100px #141414, -21px -21px 100px #525252;
+  
+}

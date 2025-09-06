@@ -72,13 +72,15 @@ export default function SectionWho() {
       {/* Partie gauche */}
       <div className="flex flex-col gap-10 text-center justify-center items-center md:text-center md:w-[40%] md:ps-10">
         <h2 className="uppercase  w-1/2 md:w-full md:text-6xl">
-          Qui sommes  nous ?
+          Qui sommes nous ?
         </h2>
         <p className="w-full md:w-[80%]">
-          Elo'sens accompagne votre développement personnel à travers l'art
-          oratoire et propose un soutien unique aux jeunes en difficulté grâce à
-          la pair-aidance. Découvrez comment retrouver confiance en vous et en
-          vos capacités.
+          Elosens est une ASBL née d’histoires de décrochage, de résilience et
+          de renaissance. Nous croyons que chaque difficulté peut devenir une
+          force, et que chaque échec est une étape vers la réussite. Notre
+          vocation est simple : redonner confiance à ceux qui doutent et
+          renforcer le savoir- parler, en particulier les jeunes qui se sentent
+          mis de côté par l’école ou par la société. 
         </p>
       </div>
 

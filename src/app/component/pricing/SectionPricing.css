@@ -151,17 +151,7 @@
   transition: box-shadow 0.3s ease;
 }
 /* //////////////////////////////// */
-.step {
-  border-radius: 30px;
-  position: relative;
-  counter-increment: step-counter;
-  color: rgb(16 185 129);
-  border: solid 10px #303030;
-  
-}
-.step:hover {
-  background: rgb(16 185 129);
-}
+
 /* .step::after {
   display: block;
   content: "";
@@ -182,50 +172,54 @@
   border-top: solid 40px rgb(16 185 129);
   border-bottom: solid 40px rgb(16 185 129);
   border-left: #303030 solid 40px;} */
-.step::before {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  content: "étape\A 2"; /* \A = saut de ligne */
-  white-space: pre; /* permet de respecter le saut de ligne */
-  position: absolute;
-  left: -50;
-  top: 40;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: rgb(16 185 129);
-  border: solid 4px #303030;
-  color: #064e3b;
+  /* .step::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    content: "étape\A 2";
+    white-space: pre;
+    position: absolute;
+    left: -50;
+    top: 40;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgb(16 185 129);
+    border: solid 4px #303030;
+    color: #064e3b;
 
-  font-weight: bolder;
-  font-size: 130%;
-}
-.step:hover::before {
+    font-weight: bolder;
+    font-size: 130%;
+  } */
+/* .step:hover::before {
   background: #064e3b;
   color: rgb(16 185 129);
-}
+} */
 
 /* :::::: */
+.step {
+  color: white;
+  padding: 30px;
+}
 .step-impaire {
-  border-radius: 30px;
-  position: relative;
-  counter-increment: step-counter;
-  color: rgb(16 185 129);
-  border: solid 10px #303030;
+  color:white;
+  padding: 30px;
+}
+.step:hover {
+  background: linear-gradient(145deg, #e6b000, #ffd200);
 }
 .step-impaire:hover {
-  background: rgb(16 185 129);
+  background: linear-gradient(145deg, #e6b000, #ffd200);
 }
 
-.step-impaire::before {
+/* .step-impaire::before {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  content: "étape\A 2"; /* \A = saut de ligne */
-  white-space: pre; /* permet de respecter le saut de ligne */
+  content: "étape\A 2"; 
+  white-space: pre; 
   position: absolute;
   left: -50;
   top: 40;
@@ -238,7 +232,7 @@
 
   font-weight: bolder;
   font-size: 130%;
-}
+} */
 /* .step-impaire::after{
     display: flex   ;
     justify-content: center;
@@ -254,14 +248,14 @@
    background-color: #ffc400;
     
 } */
-.step-impaire:hover::before {
+/* .step-impaire:hover::before {
   background: #064e3b;
   color: rgb(16 185 129);
 }
 .step-impaire:hover::after {
   background: rgb(16 185 129);
   color: rgb(16 185 129);
-}
+} */
 @media (max-width: 950) {
   .parentCard {
     flex-direction: column !important;
