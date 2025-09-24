@@ -1,3 +1,4 @@
+'use client';
 import "./Header.css";
 import Image from "next/image";
 export default function Header() {

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import "./formulaire.css";
 import Link from "next/link";
 

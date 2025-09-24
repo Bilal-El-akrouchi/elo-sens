@@ -12,15 +12,15 @@ export default function Home() {
   return (
     <>
       <main>
-        <Navbar />
+   {/*      <Navbar />
         <Header/>
         <SectionWho/>
         <SectionPricing/>
-{/* METTRE DU ROSE ORANGE VERT A CHAQUEZ SECTION  */}
+METTRE DU ROSE ORANGE VERT A CHAQUEZ SECTION 
         <SectionArtOratoire/>
         <SectionSellPoint/>
         <SectionAccrochage/>
-        <SectionContact/>
+        <SectionContact/> */}
       </main>
     </>
   );

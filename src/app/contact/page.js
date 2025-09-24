@@ -1,3 +1,4 @@
+'use client';
 import Formulaire from "../component/formulaire/formulaire";
 
 export default function Home() {

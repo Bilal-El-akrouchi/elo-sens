@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import "./SectionSellPoint.css";
 
 export default function SectionSellPoint() {

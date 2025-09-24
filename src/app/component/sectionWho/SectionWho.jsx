@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import "./SectionWho.css";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";

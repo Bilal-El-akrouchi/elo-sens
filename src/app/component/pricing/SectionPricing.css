@@ -15,7 +15,7 @@
     black 95%,
     transparent 100%
   );
-  mask-mode: alpha; /* optionnel, par défaut
+  mask-mode: alpha; 
 } */
 
 .card {
@@ -27,12 +27,13 @@
   justify-content: space-between;
   cursor: pointer;
 }
+
 .card::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  backdrop-filter: blur(8px); /* floute l’arrière-plan */
+  backdrop-filter: blur(8px);
   pointer-events: none;
 }
 
@@ -46,6 +47,7 @@
   background-position: center;
   cursor: default !important;
 }
+
 .association {
   background-image: url("/img/benevol.jpg");
 }
@@ -76,6 +78,7 @@
   border-radius: 50%;
   box-shadow: -10px 10px 0 #303030;
 }
+
 .card .content {
   position: relative;
   width: 100%;
@@ -83,9 +86,9 @@
   border-radius: 15px;
   border-top-left-radius: 0px;
   color: #ffc400;
-   p{
-    color: #303030;
-  }
+}
+.card .content p {
+  color: #303030;
 }
 
 .card .content .price {
@@ -109,15 +112,16 @@
   content: "";
   position: absolute;
   bottom: 0;
-  right: -25;
+  right: -25px; /* fixé */
   width: 25px;
   height: 25px;
   border-radius: 50%;
   box-shadow: -10px 10px 0 #edf1eb;
 }
+
 .card .content .price a {
   position: relative;
-  background-color:  #303030;
+  background-color: #303030;
   color: #edf1eb;
   padding: 1px 10px;
   margin: 15px 15px;
@@ -126,84 +130,35 @@
   font-weight: 600;
 }
 
-/* les hover */
+/* hover */
 .card:hover .content {
- background-color: #ffc400; /* emerald-500 */
+  background-color: #ffc400;
   transition: background-color 0.3s ease;
 }
-
-.content:hover{
+.content:hover {
   color: #edf1eb;
-
 }
 .card:hover .content .price {
- background-color: #ffc400; /* emerald-500 */
+  background-color: #ffc400;
   transition: background-color 0.3s ease;
 }
-.card:hover .content .price a{
-  background-color: #fff1c4; /* emerald-500 */
+.card:hover .content .price a {
+  background-color: #fff1c4;
   transition: background-color 0.3s ease;
   color: #303030;
 }
-
 .card:hover .content .price::after {
   box-shadow: -10px 10px 0 #ffc400;
   transition: box-shadow 0.3s ease;
 }
-/* //////////////////////////////// */
 
-/* .step::after {
-  display: block;
-  content: "";
-  width: 430px;
-  height: 430px;
-  position: absolute;
-  border-radius: 50%;
-  border-right: solid 40px rgb(16 185 129);
-  border-top: solid 40px rgb(16 185 129);
-  border-bottom: solid 40px rgb(16 185 129);
-  border-left: #303030 solid 40px;
-  right: 100;
-  top: -130px;
-  z-index: -10;
-} */
-/* .step:hover::after{
- border-right: solid 40px rgb(16 185 129);
-  border-top: solid 40px rgb(16 185 129);
-  border-bottom: solid 40px rgb(16 185 129);
-  border-left: #303030 solid 40px;} */
-  /* .step::before {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    content: "étape\A 2";
-    white-space: pre;
-    position: absolute;
-    left: -50;
-    top: 40;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: rgb(16 185 129);
-    border: solid 4px #303030;
-    color: #064e3b;
-
-    font-weight: bolder;
-    font-size: 130%;
-  } */
-/* .step:hover::before {
-  background: #064e3b;
-  color: rgb(16 185 129);
-} */
-
-/* :::::: */
+/* :::::: steps :::::: */
 .step {
   color: white;
   padding: 30px;
 }
 .step-impaire {
-  color:white;
+  color: white;
   padding: 30px;
 }
 .step:hover {
@@ -213,68 +168,72 @@
   background: linear-gradient(145deg, #e6b000, #ffd200);
 }
 
-/* .step-impaire::before {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  content: "1\A"; 
-  white-space: pre; 
-  position: absolute;
-  right: 400px; 
-  top: 200px;
-  width: 100px;
-  height: 100px;
-  font-weight: bolder;
-  font-size: 5000%;
-  
-  color: transparent;            
-  -webkit-text-stroke: 2px #ffffff; 
-  text-stroke: 2px #ffffff;       
-} */
-
-/* .step-impaire::after{
-    display: flex   ;
-    justify-content: center;
-    align-items: center;
-    content: "";
-    position: absolute;
-    right: -60;
-    top: 50;
-
-    width:3px ;
-    height:80px ;
-    color: #064e3b;
-   background-color: #ffc400;
-    
-} */
-/* .step-impaire:hover::before {
-  background: #064e3b;
-  color: rgb(16 185 129);
-}
-.step-impaire:hover::after {
-  background: rgb(16 185 129);
-  color: rgb(16 185 129);
-} */
-@media (max-width: 950) {
+/* media queries corrigées */
+@media (max-width: 950px) {
   .parentCard {
     flex-direction: column !important;
   }
 }
-@media (min-width: 950) {
+@media (min-width: 950px) {
   .parentCard {
     height: 100vh;
   }
 }
-@media (min-width: 767) and (max-width: 950) {
+@media (min-width: 767px) and (max-width: 950px) {
   .parentCard {
     margin-top: 10%;
   }
 }
- 
-  svg{
-    color: #303030;
-  }
-  .card:hover svg{
-    color: #fff1c4!important;
-  }
+@media (max-width: 300px) {
+.card {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 75%;
+}
+.card .content .price a {
+  position: relative;
+  background-color: #303030;
+  color: #edf1eb;
+  padding: 1px 10px;
+  margin: 15px 15px;
+  display: block;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 80%;
+}
+.card .imgbx::after {
+  content: "";
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: -10px 10px 0 #303030;
+}
+
+.card .imgbx::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left:50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: -10px 10px 0 #303030;
+}
+
+}
+
+/* svg */
+svg {
+  color: #303030;
+}
+.card:hover svg {
+  color: #fff1c4 !important;
+}

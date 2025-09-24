@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import "./SectionAccrochage.css";
 import { useInView } from "react-intersection-observer";
 

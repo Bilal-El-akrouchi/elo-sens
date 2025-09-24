@@ -9,6 +9,8 @@ export default function SectionPricing() {
   let [cliquer, setCliquer] = useState(false);
   let [selectedCard, setSelectedCard] = useState("");
   let [currentStep, setCurrentStep] = useState(0); //:::::::::::::::::::::::::::::::: index étape affichée
+  const [stepHeight, setStepHeight] = useState(160); // valeur par défaut
+
 
   function changeTitre(nouveau) {
     setFadeTitre(false);
@@ -33,38 +35,72 @@ export default function SectionPricing() {
 
   //:::::::::::::::::::::::::::::::: handleCardClick avec scroll en haut de section
   function handleCardClick(cardName) {
-    setSelectedCard(cardName); //:::::::::::::::::::::::::::::::: stocker le nom de la carte
-
-    //:::::::::::::::::::::::::::::::: remonter automatiquement au début de la section
-    const section = document.getElementById("sectionPricing");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-
-    toggleCliquer();
+    setSelectedCard(cardName); // stocker le nom de la carte
+    toggleCliquer(); // passe cliquer à true
   }
 
-  //:::::::::::::::::::::::::::::::: gérer le scroll par étapes
+  // Nouveau useEffect à ajouter en bas de tes hooks
   useEffect(() => {
-    if (!cliquer) return;
-
-    function handleWheel(e) {
-      if (e.deltaY > 0) {
-        setCurrentStep((prev) => Math.min(prev + 1, 1)); // max 1 car 2 étapes
-      } else {
-        setCurrentStep((prev) => Math.max(prev - 1, 0));
+    if (cliquer && selectedCard) {
+      const section = document.getElementById("tarifs");
+      if (section) {
+        // Timeout léger pour attendre le rendu
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 50);
       }
     }
+  }, [cliquer, selectedCard]);
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    document.body.style.overflow = "hidden"; // bloque scroll normal
+  //:::::::::::::::::::::::::::::::: gérer le scroll par étapes
+ useEffect(() => {
+  if (!cliquer) return;
 
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      document.body.style.overflow = "auto"; // réactive scroll normal
-    };
-  }, [cliquer]);
-  const [stepHeight, setStepHeight] = useState(160); // valeur par défaut
+  let startY = 0;
+
+  function handleWheel(e) {
+    e.preventDefault(); // bloque le scroll natif
+    if (e.deltaY > 0) {
+      setCurrentStep((prev) => Math.min(prev + 1, 1)); // max 1 car 2 étapes
+    } else {
+      setCurrentStep((prev) => Math.max(prev - 1, 0));
+    }
+  }
+
+  function handleTouchStart(e) {
+    startY = e.touches[0].clientY;
+  }
+
+  function handleTouchMove(e) {
+    const deltaY = e.touches[0].clientY - startY;
+
+    if (Math.abs(deltaY) > 50) { // seuil pour éviter les micro-mouvements
+      if (deltaY < 0) {
+        // swipe vers le haut
+        setCurrentStep((prev) => Math.min(prev + 1, 1));
+      } else {
+        // swipe vers le bas
+        setCurrentStep((prev) => Math.max(prev - 1, 0));
+      }
+      startY = e.touches[0].clientY; // reset pour éviter multiples déclenchements
+    }
+    e.preventDefault();
+  }
+
+  window.addEventListener("wheel", handleWheel, { passive: false });
+  window.addEventListener("touchstart", handleTouchStart, { passive: false });
+  window.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+  document.body.style.overflow = "hidden"; // bloque scroll global
+
+  return () => {
+    window.removeEventListener("wheel", handleWheel);
+    window.removeEventListener("touchstart", handleTouchStart);
+    window.removeEventListener("touchmove", handleTouchMove);
+    document.body.style.overflow = "auto"; // réactive scroll
+  };
+}, [cliquer]);
+
 
   useEffect(() => {
     function updateStepHeight() {
@@ -83,7 +119,7 @@ export default function SectionPricing() {
   }, []);
 
   return (
-    <section id="tarifs" className="bg-[#303030] ">
+    <section id="tarifs" className="bg-[#303030] min-h-screen pt-10 ">
       {cliquer ? (
         <div
           className={`w-full h-screen flex flex-col justify-center items-center transition-opacity duration-500 ${
@@ -116,8 +152,8 @@ export default function SectionPricing() {
                     dans la main pour bâtir une animation qui marque à vie.
                   </div>
                 </div>
-                <div className="absolute right-4 top-110 md:right-150 md:top-120 text-xl md:text-5xl text-white animate-bounce">
-                  <i class="bi bi-arrow-down-circle-fill"></i>
+                <div className="absolute top-3/4 left-1/2 text-5xl text-white animate-bounce">
+                  <i className="bi bi-arrow-down-circle-fill"></i>
                 </div>
                 <div className="w-[60%] flex mt-30 md:mt-50 justify-end">
                   <div className="step w-[310px]   choixoe">
@@ -135,9 +171,9 @@ export default function SectionPricing() {
                 {/* Version mobile : X */}
                 <button
                   onClick={toggleCliquer}
-                  className="px-2 py-1 tex-3xl  sm:text-5xl font-bold rounded-full text-amber-400  hover:bg-red-800 transition md:hidden"
+                  className="px-2 py-1 sm:text-5xl font-bold rounded-full text-amber-400  hover:bg-red-800 transition md:hidden"
                 >
-                  <i class="bi bi-arrow-left-circle-fill "></i>{" "}
+                  <i className="bi bi-arrow-left-circle-fill "></i>{" "}
                 </button>
 
                 {/* Version desktop : Bouton texte */}
@@ -161,22 +197,24 @@ export default function SectionPricing() {
                 }}
               >
                 <div className="w-[60%] flex items-center justify-start ">
-                  <div className="step-impaire w-[450px] sm:mb-120 md:h-auto overflow-y-scroll md:overflow-visible md:mt-20 mt-5 choixoe text-sm">
-                    <span className="sm:text-3xl">Nos offres pour les écoles</span>{" "}
+                  <div className="step-impaire w-[450px] mb-[40] sm:mb-[90] md:h-auto overflow-y-scroll md:overflow-visible md:mt-20 mt-5 choixoe text-sm">
+                    <span className="sm:text-3xl">
+                      Nos offres pour les écoles
+                    </span>{" "}
                     <br />
                     <p className="sm:text-xl md:text-m mt-4">
-
-                    Nous proposons des ateliers autour de l’accrochage à la vie,
-                    de la pair-aidance et de l’art oratoire. Ces animations
-                    offrent aux élèves un espace pour s’exprimer, renforcer leur
-                    confiance et améliorer la cohésion en classe.
+                      Nous proposons des ateliers autour de l’accrochage à la
+                      vie, de la pair-aidance et de l’art oratoire. Ces
+                      animations offrent aux élèves un espace pour s’exprimer,
+                      renforcer leur confiance et améliorer la cohésion en
+                      classe.
                     </p>
                   </div>
                 </div>
-                <div className="absolute right-150 top-120 text-5xl text-white animate-bounce">
-                  <i class="bi bi-arrow-down-circle-fill"></i>
+                <div className="absolute top-[80%] left-1/2 text-5xl text-white animate-bounce">
+                  <i className="bi bi-arrow-down-circle-fill"></i>
                 </div>
-                <div className="w-[60%] flex mt-40 md:mt-80 justify-end">
+                <div className="w-[60%] flex mt-[40] md:mt-0 justify-end">
                   <div className="step text-sm w-[310px] choixoe">
                     Prenez contact et préparons ensemble l’intervention Avec
                     l’équipe éducative, nous définissons les thèmes à aborder
@@ -194,9 +232,9 @@ export default function SectionPricing() {
                 {/* Version mobile : X */}
                 <button
                   onClick={toggleCliquer}
-                  className="px-2  tex-3xl  sm:text-5xl font-bold rounded-full text-amber-400  hover:bg-red-800 transition md:hidden"
+                  className="px-2 py-1 sm:text-5xl font-bold rounded-full text-amber-400  hover:bg-red-800 transition md:hidden"
                 >
-                  <i class="bi bi-arrow-left-circle-fill "></i>{" "}
+                  <i className="bi bi-arrow-left-circle-fill "></i>{" "}
                 </button>
 
                 {/* Version desktop : Bouton texte */}
@@ -218,7 +256,7 @@ export default function SectionPricing() {
                 style={{ transform: `translateY(-${currentStep * 50}vh)` }}
               >
                 <div className="w-[80%] flex items-center justify-start ">
-                  <div className="step-impaire mt-30 mb-30 w-[240px] choixoe">
+                  <div className="step-impaire mt-[120] mb-[30] w-[240px] choixoe">
                     <span className="text-xl ">
                       Prenez contact et co-construisons l’atelier enssemble
                     </span>
@@ -227,20 +265,22 @@ export default function SectionPricing() {
                     réalités...
                   </div>
                 </div>
+             
                 <div className="w-[80%] flex justify-end ">
                   <div className="step w-[310px]  choixoe">
-                    contactez nous simplement par telephone ou par mail pour discuter de votre projet
+                    contactez nous simplement par telephone ou par mail pour
+                    discuter de votre projet
                   </div>
                 </div>
               </div>
 
-                <div className="absolute top-0 right-30 sm:top-10 sm:right-70 md:top-10 md:left-134 flex justify-center w-full">
+              <div className="absolute top-[16%] left-[33%] text-4xl sm:top-10 sm:right-70 md:top-10 md:left-134 flex justify-center w-full">
                 {/* Version mobile : X */}
                 <button
                   onClick={toggleCliquer}
                   className="px-2  tex-3xl  sm:text-5xl font-bold rounded-full text-amber-400  hover:bg-red-800 transition md:hidden"
                 >
-                  <i class="bi bi-arrow-left-circle-fill "></i>{" "}
+                  <i className="bi bi-arrow-left-circle-fill "></i>{" "}
                 </button>
 
                 {/* Version desktop : Bouton texte */}
@@ -254,7 +294,7 @@ export default function SectionPricing() {
             </div>
           )}
         </div>
-      ) : (
+      ) : ( 
         //:::::::::::::::::::::::::::::::: affichage des cartes (inchangé)
         <div
           className={`transition-opacity duration-500 ${
@@ -273,7 +313,7 @@ export default function SectionPricing() {
 
           <div
             id="card"
-            className="parentCard flex md:flex-row justify-around items-center  w-full"
+            className="parentCard flex  justify-around items-center  w-full"
           >
             {/*:::::::::::::::::::::::::::::::: tes cards restent inchangées */}
             {/* association */}
@@ -290,13 +330,13 @@ export default function SectionPricing() {
                 <div className="imgbx association"></div>
                 <div className="content bg-[#edf1eb]">
                   <div className="price bg-[#edf1eb] ">
-                    <a href="">
+                    <a href="#">
                       <span className="text-[0.6em] ">à partir de</span> <br />
                       800 €
                     </a>
                   </div>
-                  <div className="h-full w-full flex flex-col pt-5">
-                    <p className=" text-[0.67em] text-start flex flex-col justify-center items-start h-full px-5 ">
+                  <div className="h-full w-full flex flex-col sm:pt-5">
+                    <p className=" text-[0.67em] text-start mt-3 flex flex-col justify-center items-start h-full px-5 ">
                       <span className="text-[1.4em] ">
                         Nos offres pour les associations
                       </span>
@@ -305,7 +345,7 @@ export default function SectionPricing() {
                       d'éloquence Chaque activité est conçue pour renforcer la
                       confiance, stimuler l’expression et favoriser la cohésion
                       au sein de vos groupes.{" "}
-                      <div className="h-full text-emerald-200-200 flex justify-end items-end pb-5">
+                      <div className="h-full flex justify-end items-end pb-5">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
@@ -336,7 +376,7 @@ export default function SectionPricing() {
                 <div className="imgbx ecole"></div>
                 <div className="content bg-[#edf1eb]">
                   <div className="price bg-[#edf1eb] ">
-                    <a href="">
+                    <a href="#">
                       <span className="text-[0.6em] ">à partir de</span> <br />
                       500 €
                     </a>
@@ -351,7 +391,7 @@ export default function SectionPricing() {
                       l’art oratoire. Ces animations offrent aux élèves un
                       espace pour s’exprimer, renforcer leur confiance et
                       améliorer la cohésion en classe.
-                      <div className="h-full text-emerald-200-200 flex justify-end items-end pb-5">
+                      <div className="h-full  flex justify-end items-end pb-5">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
@@ -382,7 +422,7 @@ export default function SectionPricing() {
                 <div className="imgbx buisnes"></div>
                 <div className="content bg-[#edf1eb]">
                   <div className="price bg-[#edf1eb] ">
-                    <a href="">
+                    <a href="#">
                       <span className="text-[0.6em] ">commande</span> <br />
                       sur devis
                     </a>
@@ -396,7 +436,7 @@ export default function SectionPricing() {
                       mesure correspondant parfaitement a vos attentes et besoin
                       ? alors cette offre est faite pour vous, n'attendez plus
                       lancez vous !
-                      <div className="h-full text-emerald-200-200 flex justify-end items-end pb-5">
+                      <div className="h-full  flex justify-end items-end pb-5">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"

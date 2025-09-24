@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import "./SectionContact.css";
 
 
@@ -9,13 +9,13 @@ export default function SectionContact() {
 
         <div className="lg:text-xl flex-col md:flex-row gap-10 text-lg flex justify-evenly items-center w-4/5 mx-auto mt-10 p-10">
         <a href="/contact">
-          <div className="p-5 hover:text-amber-400  text-white   font-semibold choixoe cursor-pointer">Rejoins-nous !</div>
+          <div className="p-5 hover:text-amber-400  text-white   font-semibold choixoe cursor-pointer">Rejoignez-nous !</div>
         </a>
           <a href="/contact">
-          <div className="p-5 hover:text-amber-400  text-white  choixoe cursor-pointer"> Soutiens-nous</div>
+          <div className="p-5 hover:text-amber-400  text-white  choixoe cursor-pointer"> Soutenez-nous</div>
           </a>
           <a href="/contact">
-            <div className="p-5 hover:text-amber-400  text-white   choixoe cursor-pointer" cursor-pointer>Contacte-nous</div>
+            <div className="p-5 hover:text-amber-400  text-white   choixoe cursor-pointer" cursor-pointer>Contactez-nous</div>
           </a>
 
         </div>
